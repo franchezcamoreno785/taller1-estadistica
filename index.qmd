@@ -1,0 +1,177 @@
+---
+title: "Taller 1 - Fundamentos de Estadistica"
+author: "Franchezca Juliana Moreno Jimenez"
+date: "2026-05-03"
+format:
+  html:
+    toc: true
+    toc-title: "Contenido"
+    theme: cosmo
+    lang: es
+---
+
+## Informacion General
+
+| Campo | Detalle |
+|-------|---------|
+| Asignatura | Estadistica I |
+| Docente | Dagoberto Salgado Horta |
+| Nivel | Pregrado |
+| Fecha de entrega | 3 de Mayo de 2026 |
+
+---
+
+## 1. Historia de la Estadistica
+
+La estadistica es una de las ciencias mas antiguas que existen. Desde hace miles de años los seres humanos han necesitado recolectar y organizar informacion para poder tomar decisiones.
+
+### Origen
+
+La estadistica nacio de la necesidad de los gobernantes de conocer cuantas personas vivian en sus territorios, cuantos animales tenian, cuanta comida habia, etc. Los primeros registros que se conocen son de Mesopotamia y Egipto, hace mas de 5000 años.
+
+### Linea de Tiempo
+
+| Periodo | Hecho historico |
+|---------|----------------|
+| 3000 a.C. | En Mesopotamia y Egipto se hacen los primeros censos de poblacion para cobrar impuestos y organizar el trabajo. |
+| 1200 a.C. | En la Biblia (Libro de los Numeros) se menciona un censo que hizo Moises. |
+| Siglo I a.C. | El Imperio Romano hacia censos cada 5 años para saber cuantos ciudadanos habia. |
+| Año 1662 | John Graunt en Londres analizo los registros de muertes y nacimientos. Muchos lo consideran el padre de la estadistica moderna. |
+| Siglo XVIII | Matematicos como Gauss y Laplace desarrollaron la teoria de la probabilidad, base de la estadistica inferencial. |
+| Siglo XIX | Adolphe Quetelet aplico la estadistica a las ciencias sociales. Florence Nightingale uso graficos para mejorar la salud publica. |
+| Siglo XX | Ronald Fisher formalizo los metodos estadisticos modernos. La estadistica se volvio fundamental en medicina, economia y ciencias sociales. |
+| Hoy en dia | La estadistica es la base de la ciencia de datos, la inteligencia artificial y la toma de decisiones en los gobiernos. |
+
+---
+
+## 2. Conceptos Fundamentales de la Estadistica
+
+A continuacion se explican los conceptos mas importantes de la estadistica con ejemplos aplicados a la administracion publica.
+
+### Estadistica Descriptiva
+
+Es la parte de la estadistica que se encarga de resumir y describir los datos que tenemos. Usa tablas, graficos y calculos como el promedio o la moda.
+
+> **Ejemplo en adm. publica:** El DANE publica cada mes la tasa de desempleo en Colombia. Eso es estadistica descriptiva porque resume millones de datos en un solo numero.
+
+### Estadistica Inferencial
+
+Es la parte de la estadistica que nos permite sacar conclusiones sobre toda una poblacion estudiando solo una parte de ella. Usa la probabilidad para hacerlo.
+
+> **Ejemplo en adm. publica:** El Ministerio de Salud encuesta a 10.000 hogares para estimar cuantas personas tienen diabetes en todo el pais. No necesita preguntarle a todo el mundo.
+
+### Poblacion
+
+Es el conjunto completo de personas, objetos o cosas que queremos estudiar.
+
+> **Ejemplo en adm. publica:** Todos los funcionarios publicos de Colombia registrados en el SIGEP son la poblacion si queremos estudiar el empleo estatal.
+
+### Muestra
+
+Es una parte de la poblacion que se selecciona para estudiarla. Tiene que ser representativa, es decir, parecida a la poblacion completa.
+
+> **Ejemplo en adm. publica:** La Contraloria revisa 500 contratos de los 80.000 que se firmaron en el año para verificar si se esta usando bien el dinero publico.
+
+### Parametro
+
+Es un valor que describe a toda la poblacion. Casi nunca lo conocemos exactamente porque seria muy dificil estudiar a todos.
+
+> **Ejemplo en adm. publica:** El salario promedio real de TODOS los empleados publicos de Colombia es un parametro. Calcularlo exactamente requeriria un censo completo.
+
+### Estadistico
+
+Es un valor que se calcula a partir de la muestra y que se usa para aproximarse al parametro de la poblacion.
+
+> **Ejemplo en adm. publica:** Si encuestamos a 2.000 servidores publicos y calculamos su salario promedio, ese resultado es un estadistico que aproxima el parametro real.
+
+### Muestreo
+
+Es el proceso de seleccionar la muestra. Hay varios metodos: aleatorio simple, estratificado, por conglomerados, etc.
+
+> **Ejemplo en adm. publica:** El DANE usa muestreo estratificado por regiones en la Encuesta Nacional de Calidad de Vida para que todas las zonas del pais queden representadas.
+
+### Sesgo
+
+Es un error que ocurre cuando la muestra no representa bien a la poblacion porque se favorecio o se excluyo algun grupo.
+
+> **Ejemplo en adm. publica:** Si para medir satisfaccion ciudadana solo se encuesta a personas con acceso a internet, se excluye a la poblacion rural y los resultados quedan sesgados.
+
+---
+
+## 3. Variables Estadisticas
+
+### ¿Que es una variable?
+
+En estadistica, una variable es cualquier caracteristica que puede tomar distintos valores entre los individuos que estamos estudiando. Por ejemplo, la edad de los funcionarios de una alcaldia es una variable porque cada funcionario tiene una edad diferente.
+
+### Clasificacion segun su naturaleza
+
+**Variables Cualitativas:** expresan categorias o atributos, no numeros.
+
+- **Nominales:** no tienen orden. Ej: tipo de contrato (termino fijo, indefinido, prestacion de servicios)
+- **Ordinales:** si tienen orden. Ej: nivel de satisfaccion (bajo, medio, alto)
+
+**Variables Cuantitativas:** se expresan con numeros.
+
+- **Discretas:** solo toman valores enteros, se pueden contar. Ej: numero de empleados
+- **Continuas:** pueden tomar cualquier valor dentro de un rango. Ej: salario, temperatura
+
+### Escalas de Medicion
+
+- **Nominal:** solo clasifica, no hay orden. Ej: genero, tipo de entidad
+- **Ordinal:** clasifica y ordena pero las distancias no son iguales. Ej: estrato, nivel educativo
+- **Intervalo:** tiene orden y distancias iguales pero no tiene cero absoluto. Ej: temperatura en grados Celsius
+- **Razon:** tiene todo lo anterior mas un cero absoluto real. Ej: ingresos, numero de contratos
+
+### Tabla de Variables
+
+| Variable | Tipo | Naturaleza | Escala de medicion | Ejemplo en adm. publica | Justificacion |
+|----------|------|------------|-------------------|------------------------|---------------|
+| Genero del servidor publico | Cualitativa | Nominal | Nominal | Masculino / Femenino en el SIGEP | No hay orden entre las categorias, solo se puede clasificar |
+| Nivel de satisfaccion ciudadana | Cualitativa | Ordinal | Ordinal | Encuesta de servicios: muy insatisfecho, insatisfecho, satisfecho, muy satisfecho | Tiene orden pero la distancia entre niveles no es igual |
+| Numero de contratos ejecutados | Cuantitativa | Discreta | Razon | Contratos firmados por una alcaldia en un trimestre | Son valores enteros contables y tiene cero absoluto |
+| Presupuesto asignado (pesos) | Cuantitativa | Continua | Razon | Presupuesto municipal de Duitama 2026 | Puede tomar cualquier valor y tiene cero absoluto real |
+| Temperatura en obras publicas | Cuantitativa | Continua | Intervalo | Temperatura en proyectos viales de Boyaca | No tiene cero absoluto real (0°C no es ausencia de temperatura) |
+| Estrato socioeconomico | Cualitativa | Ordinal | Ordinal | Estratos 1 al 6 en el Sisben para subsidios | Tienen orden pero la diferencia entre estratos no es uniforme |
+| Tasa de cobertura educativa (%) | Cuantitativa | Continua | Razon | Porcentaje de ninos matriculados segun el MEN | Valor continuo con cero absoluto |
+| Tipo de entidad publica | Cualitativa | Nominal | Nominal | Alcaldia, Gobernacion, Ministerio, Empresa publica | Solo se clasifica, no hay orden posible entre tipos |
+
+---
+
+## 4. Aplicaciones en la Administracion Publica
+
+La estadistica es muy importante para el Estado porque le permite tomar mejores decisiones basadas en datos reales.
+
+### Indicadores de Gestion
+
+El gobierno usa indicadores estadisticos para medir si las entidades publicas estan cumpliendo sus metas. Por ejemplo el MIPG mide el desempeño de todas las entidades del Estado con base en datos estadisticos.
+
+### Evaluacion de Politicas Publicas
+
+El DNP usa modelos estadisticos para evaluar si los programas del gobierno estan funcionando. Se puede comparar antes y despues de implementar un programa para ver si hubo mejoras reales.
+
+### Analisis de Pobreza
+
+El DANE calcula el Indice de Pobreza Multidimensional (IPM) combinando 15 variables estadisticas relacionadas con educacion, trabajo, salud y vivienda.
+
+### Cobertura en Salud
+
+El Ministerio de Salud monitorea cuantas personas estan afiliadas al sistema de salud y cuantos ninos se mueren por cada 1000 nacimientos. Con esos datos decide donde invertir mas recursos.
+
+### Educacion
+
+El Ministerio de Educacion Nacional usa tasas de cobertura escolar para distribuir el dinero del Sistema General de Participaciones entre los municipios que mas lo necesitan.
+
+---
+
+## 5. Videos Complementarios
+
+A continuacion estan los enlaces a los videos de las clases y material de apoyo del curso:
+
+- [Sesion 3 - Estadistica I (25 de abril de 2026) - Microsoft Teams](https://teams.microsoft.com/l/meetingrecap?driveId=b%21D7YzzlbmeEWLjwNK0auT2CH3uFd1xIVApOp7VErPTrDKHjRU8a_SRKgonSTj8TAq&driveItemId=01TJV53VDQU4OPMC3I4JBYQC2NMBVTGRJR&sitePath=https%3A%2F%2Fesapedu.sharepoint.com%2Fsites%2F2026-1_ESTADISTICAI_3B_IBAGUE_DAGOBERTOSALGADOHORTA%2FDocumentos+compartidos%2FGeneral%2FRecordings%2FSESI%C3%93N_3_ESTAD%C3%8DSTICA_1-20260425_193843-Grabaci%C3%B3n+de+la+reuni%C3%B3n.mp4%3Fweb%3D1&fileUrl=https%3A%2F%2Fesapedu.sharepoint.com%2Fsites%2F2026-1_ESTADISTICAI_3B_IBAGUE_DAGOBERTOSALGADOHORTA%2FDocumentos+compartidos%2FGeneral%2FRecordings%2FSESI%C3%93N_3_ESTAD%C3%8DSTICA_1-20260425_193843-Grabaci%C3%B3n+de+la+reuni%C3%B3n.mp4%3Fweb%3D1&iCalUid=040000008200e00074c5b7101a82e00800000000dbb71e1212d5dc01000000000000000010000000f0b71a480e6bfd4a9c877439bf00cfad&threadId=19%3A045SfnXGMiwhQANtjmK6KIYxQJ41IkDfRRZpSfFRSvQ1%40thread.tacv2&organizerId=486fd343-ddf5-4236-a980-b129c965f186&tenantId=b24f0388-e61b-43e0-b9e7-baa5b0d5121e&callId=d8c87ec8-0789-4afc-9504-7d76aebd9fe6&threadType=space&meetingType=Scheduled&organizerGroupId=c12d9339-4e07-407b-80c3-861d6de8101e&channelType=Standard&replyChainId=1777162650028&subType=RecapSharingLink_RecapCore)
+
+- [Sesion 4 - Estadistica I (26 de abril de 2026) - Microsoft Teams](https://teams.microsoft.com/l/meetingrecap?driveId=b%21D7YzzlbmeEWLjwNK0auT2CH3uFd1xIVApOp7VErPTrDKHjRU8a_SRKgonSTj8TAq&driveItemId=01TJV53VAI443FKVF6DVGILZIOBYWCM3RC&sitePath=https%3A%2F%2Fesapedu.sharepoint.com%2Fsites%2F2026-1_ESTADISTICAI_3B_IBAGUE_DAGOBERTOSALGADOHORTA%2FDocumentos+compartidos%2FGeneral%2FRecordings%2FSESI%C3%93N_4_ESTAD%C3%8DSTICA_1-20260426_081142-Grabaci%C3%B3n+de+la+reuni%C3%B3n.mp4%3Fweb%3D1&fileUrl=https%3A%2F%2Fesapedu.sharepoint.com%2Fsites%2F2026-1_ESTADISTICAI_3B_IBAGUE_DAGOBERTOSALGADOHORTA%2FDocumentos+compartidos%2FGeneral%2FRecordings%2FSESI%C3%93N_4_ESTAD%C3%8DSTICA_1-20260426_081142-Grabaci%C3%B3n+de+la+reuni%C3%B3n.mp4%3Fweb%3D1&iCalUid=040000008200e00074c5b7101a82e00800000000a68d34197ed5dc010000000000000000100000006fe211a647b36a4ea9dee485003654bd&threadId=19%3A045SfnXGMiwhQANtjmK6KIYxQJ41IkDfRRZpSfFRSvQ1%40thread.tacv2&organizerId=486fd343-ddf5-4236-a980-b129c965f186&tenantId=b24f0388-e61b-43e0-b9e7-baa5b0d5121e&callId=c1fe7691-ae5e-4dc3-8726-0f14a5d169e9&threadType=space&meetingType=Scheduled&organizerGroupId=c12d9339-4e07-407b-80c3-861d6de8101e&channelType=Standard&replyChainId=1777209047441&subType=RecapSharingLink_RecapCore)
+
+- [Video YouTube - Estadistica I (desde el minuto 26:29)](https://www.youtube.com/watch?v=76CtlssWnTA&t=1589s)
+
+- [Canal del profesor en YouTube](https://www.youtube.com/@dagobertosalgadohorta9981)
