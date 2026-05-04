@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Franchezca Juliana Moreno Jimenez">
+
+<title>Taller 1 - Fundamentos de Estadistica</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="index_files/libs/clipboard/clipboard.min.js"></script>
+<script src="index_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="index_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="index_files/libs/quarto-html/popper.min.js"></script>
+<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="index_files/libs/quarto-html/anchor.min.js"></script>
+<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="index_files/libs/bootstrap/bootstrap-67270d1595a62d14f123c043d4fb2f18.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contenido</h2>
+   
+  <ul>
+  <li><a href="#informacion-general" id="toc-informacion-general" class="nav-link active" data-scroll-target="#informacion-general">Informacion General</a></li>
+  <li><a href="#historia-de-la-estadistica" id="toc-historia-de-la-estadistica" class="nav-link" data-scroll-target="#historia-de-la-estadistica">1. Historia de la Estadistica</a>
+  <ul class="collapse">
+  <li><a href="#origen" id="toc-origen" class="nav-link" data-scroll-target="#origen">Origen</a></li>
+  <li><a href="#linea-de-tiempo" id="toc-linea-de-tiempo" class="nav-link" data-scroll-target="#linea-de-tiempo">Linea de Tiempo</a></li>
+  </ul></li>
+  <li><a href="#conceptos-fundamentales-de-la-estadistica" id="toc-conceptos-fundamentales-de-la-estadistica" class="nav-link" data-scroll-target="#conceptos-fundamentales-de-la-estadistica">2. Conceptos Fundamentales de la Estadistica</a>
+  <ul class="collapse">
+  <li><a href="#estadistica-descriptiva" id="toc-estadistica-descriptiva" class="nav-link" data-scroll-target="#estadistica-descriptiva">Estadistica Descriptiva</a></li>
+  <li><a href="#estadistica-inferencial" id="toc-estadistica-inferencial" class="nav-link" data-scroll-target="#estadistica-inferencial">Estadistica Inferencial</a></li>
+  <li><a href="#poblacion" id="toc-poblacion" class="nav-link" data-scroll-target="#poblacion">Poblacion</a></li>
+  <li><a href="#muestra" id="toc-muestra" class="nav-link" data-scroll-target="#muestra">Muestra</a></li>
+  <li><a href="#parametro" id="toc-parametro" class="nav-link" data-scroll-target="#parametro">Parametro</a></li>
+  <li><a href="#estadistico" id="toc-estadistico" class="nav-link" data-scroll-target="#estadistico">Estadistico</a></li>
+  <li><a href="#muestreo" id="toc-muestreo" class="nav-link" data-scroll-target="#muestreo">Muestreo</a></li>
+  <li><a href="#sesgo" id="toc-sesgo" class="nav-link" data-scroll-target="#sesgo">Sesgo</a></li>
+  </ul></li>
+  <li><a href="#variables-estadisticas" id="toc-variables-estadisticas" class="nav-link" data-scroll-target="#variables-estadisticas">3. Variables Estadisticas</a>
+  <ul class="collapse">
+  <li><a href="#que-es-una-variable" id="toc-que-es-una-variable" class="nav-link" data-scroll-target="#que-es-una-variable">¿Que es una variable?</a></li>
+  <li><a href="#clasificacion-segun-su-naturaleza" id="toc-clasificacion-segun-su-naturaleza" class="nav-link" data-scroll-target="#clasificacion-segun-su-naturaleza">Clasificacion segun su naturaleza</a></li>
+  <li><a href="#escalas-de-medicion" id="toc-escalas-de-medicion" class="nav-link" data-scroll-target="#escalas-de-medicion">Escalas de Medicion</a></li>
+  <li><a href="#tabla-de-variables" id="toc-tabla-de-variables" class="nav-link" data-scroll-target="#tabla-de-variables">Tabla de Variables</a></li>
+  </ul></li>
+  <li><a href="#aplicaciones-en-la-administracion-publica" id="toc-aplicaciones-en-la-administracion-publica" class="nav-link" data-scroll-target="#aplicaciones-en-la-administracion-publica">4. Aplicaciones en la Administracion Publica</a>
+  <ul class="collapse">
+  <li><a href="#indicadores-de-gestion" id="toc-indicadores-de-gestion" class="nav-link" data-scroll-target="#indicadores-de-gestion">Indicadores de Gestion</a></li>
+  <li><a href="#evaluacion-de-politicas-publicas" id="toc-evaluacion-de-politicas-publicas" class="nav-link" data-scroll-target="#evaluacion-de-politicas-publicas">Evaluacion de Politicas Publicas</a></li>
+  <li><a href="#analisis-de-pobreza" id="toc-analisis-de-pobreza" class="nav-link" data-scroll-target="#analisis-de-pobreza">Analisis de Pobreza</a></li>
+  <li><a href="#cobertura-en-salud" id="toc-cobertura-en-salud" class="nav-link" data-scroll-target="#cobertura-en-salud">Cobertura en Salud</a></li>
+  <li><a href="#educacion" id="toc-educacion" class="nav-link" data-scroll-target="#educacion">Educacion</a></li>
+  </ul></li>
+  <li><a href="#videos-complementarios" id="toc-videos-complementarios" class="nav-link" data-scroll-target="#videos-complementarios">5. Videos Complementarios</a></li>
+  </ul>
+</nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Taller 1 - Fundamentos de Estadistica</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Autor/a</div>
+    <div class="quarto-title-meta-contents">
+             <p>Franchezca Juliana Moreno Jimenez </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Fecha de publicación</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">3 de mayo de 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="informacion-general" class="level2">
+<h2 class="anchored" data-anchor-id="informacion-general">Informacion General</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Campo</th>
+<th>Detalle</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Asignatura</td>
+<td>Estadistica I</td>
+</tr>
+<tr class="even">
+<td>Docente</td>
+<td>Dagoberto Salgado Horta</td>
+</tr>
+<tr class="odd">
+<td>Nivel</td>
+<td>Pregrado</td>
+</tr>
+<tr class="even">
+<td>Fecha de entrega</td>
+<td>3 de Mayo de 2026</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="historia-de-la-estadistica" class="level2">
+<h2 class="anchored" data-anchor-id="historia-de-la-estadistica">1. Historia de la Estadistica</h2>
+<p>La estadistica es una de las ciencias mas antiguas que existen. Desde hace miles de años los seres humanos han necesitado recolectar y organizar informacion para poder tomar decisiones.</p>
+<section id="origen" class="level3">
+<h3 class="anchored" data-anchor-id="origen">Origen</h3>
+<p>La estadistica nacio de la necesidad de los gobernantes de conocer cuantas personas vivian en sus territorios, cuantos animales tenian, cuanta comida habia, etc. Los primeros registros que se conocen son de Mesopotamia y Egipto, hace mas de 5000 años.</p>
+</section>
+<section id="linea-de-tiempo" class="level3">
+<h3 class="anchored" data-anchor-id="linea-de-tiempo">Linea de Tiempo</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 36%">
+<col style="width: 64%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Periodo</th>
+<th>Hecho historico</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>3000 a.C.</td>
+<td>En Mesopotamia y Egipto se hacen los primeros censos de poblacion para cobrar impuestos y organizar el trabajo.</td>
+</tr>
+<tr class="even">
+<td>1200 a.C.</td>
+<td>En la Biblia (Libro de los Numeros) se menciona un censo que hizo Moises.</td>
+</tr>
+<tr class="odd">
+<td>Siglo I a.C.</td>
+<td>El Imperio Romano hacia censos cada 5 años para saber cuantos ciudadanos habia.</td>
+</tr>
+<tr class="even">
+<td>Año 1662</td>
+<td>John Graunt en Londres analizo los registros de muertes y nacimientos. Muchos lo consideran el padre de la estadistica moderna.</td>
+</tr>
+<tr class="odd">
+<td>Siglo XVIII</td>
+<td>Matematicos como Gauss y Laplace desarrollaron la teoria de la probabilidad, base de la estadistica inferencial.</td>
+</tr>
+<tr class="even">
+<td>Siglo XIX</td>
+<td>Adolphe Quetelet aplico la estadistica a las ciencias sociales. Florence Nightingale uso graficos para mejorar la salud publica.</td>
+</tr>
+<tr class="odd">
+<td>Siglo XX</td>
+<td>Ronald Fisher formalizo los metodos estadisticos modernos. La estadistica se volvio fundamental en medicina, economia y ciencias sociales.</td>
+</tr>
+<tr class="even">
+<td>Hoy en dia</td>
+<td>La estadistica es la base de la ciencia de datos, la inteligencia artificial y la toma de decisiones en los gobiernos.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+<section id="conceptos-fundamentales-de-la-estadistica" class="level2">
+<h2 class="anchored" data-anchor-id="conceptos-fundamentales-de-la-estadistica">2. Conceptos Fundamentales de la Estadistica</h2>
+<p>A continuacion se explican los conceptos mas importantes de la estadistica con ejemplos aplicados a la administracion publica.</p>
+<section id="estadistica-descriptiva" class="level3">
+<h3 class="anchored" data-anchor-id="estadistica-descriptiva">Estadistica Descriptiva</h3>
+<p>Es la parte de la estadistica que se encarga de resumir y describir los datos que tenemos. Usa tablas, graficos y calculos como el promedio o la moda.</p>
+<blockquote class="blockquote">
+<p><strong>Ejemplo en adm. publica:</strong> El DANE publica cada mes la tasa de desempleo en Colombia. Eso es estadistica descriptiva porque resume millones de datos en un solo numero.</p>
+</blockquote>
+</section>
+<section id="estadistica-inferencial" class="level3">
+<h3 class="anchored" data-anchor-id="estadistica-inferencial">Estadistica Inferencial</h3>
+<p>Es la parte de la estadistica que nos permite sacar conclusiones sobre toda una poblacion estudiando solo una parte de ella. Usa la probabilidad para hacerlo.</p>
+<blockquote class="blockquote">
+<p><strong>Ejemplo en adm. publica:</strong> El Ministerio de Salud encuesta a 10.000 hogares para estimar cuantas personas tienen diabetes en todo el pais. No necesita preguntarle a todo el mundo.</p>
+</blockquote>
+</section>
+<section id="poblacion" class="level3">
+<h3 class="anchored" data-anchor-id="poblacion">Poblacion</h3>
+<p>Es el conjunto completo de personas, objetos o cosas que queremos estudiar.</p>
+<blockquote class="blockquote">
+<p><strong>Ejemplo en adm. publica:</strong> Todos los funcionarios publicos de Colombia registrados en el SIGEP son la poblacion si queremos estudiar el empleo estatal.</p>
+</blockquote>
+</section>
+<section id="muestra" class="level3">
+<h3 class="anchored" data-anchor-id="muestra">Muestra</h3>
+<p>Es una parte de la poblacion que se selecciona para estudiarla. Tiene que ser representativa, es decir, parecida a la poblacion completa.</p>
+<blockquote class="blockquote">
+<p><strong>Ejemplo en adm. publica:</strong> La Contraloria revisa 500 contratos de los 80.000 que se firmaron en el año para verificar si se esta usando bien el dinero publico.</p>
+</blockquote>
+</section>
+<section id="parametro" class="level3">
+<h3 class="anchored" data-anchor-id="parametro">Parametro</h3>
+<p>Es un valor que describe a toda la poblacion. Casi nunca lo conocemos exactamente porque seria muy dificil estudiar a todos.</p>
+<blockquote class="blockquote">
+<p><strong>Ejemplo en adm. publica:</strong> El salario promedio real de TODOS los empleados publicos de Colombia es un parametro. Calcularlo exactamente requeriria un censo completo.</p>
+</blockquote>
+</section>
+<section id="estadistico" class="level3">
+<h3 class="anchored" data-anchor-id="estadistico">Estadistico</h3>
+<p>Es un valor que se calcula a partir de la muestra y que se usa para aproximarse al parametro de la poblacion.</p>
+<blockquote class="blockquote">
+<p><strong>Ejemplo en adm. publica:</strong> Si encuestamos a 2.000 servidores publicos y calculamos su salario promedio, ese resultado es un estadistico que aproxima el parametro real.</p>
+</blockquote>
+</section>
+<section id="muestreo" class="level3">
+<h3 class="anchored" data-anchor-id="muestreo">Muestreo</h3>
+<p>Es el proceso de seleccionar la muestra. Hay varios metodos: aleatorio simple, estratificado, por conglomerados, etc.</p>
+<blockquote class="blockquote">
+<p><strong>Ejemplo en adm. publica:</strong> El DANE usa muestreo estratificado por regiones en la Encuesta Nacional de Calidad de Vida para que todas las zonas del pais queden representadas.</p>
+</blockquote>
+</section>
+<section id="sesgo" class="level3">
+<h3 class="anchored" data-anchor-id="sesgo">Sesgo</h3>
+<p>Es un error que ocurre cuando la muestra no representa bien a la poblacion porque se favorecio o se excluyo algun grupo.</p>
+<blockquote class="blockquote">
+<p><strong>Ejemplo en adm. publica:</strong> Si para medir satisfaccion ciudadana solo se encuesta a personas con acceso a internet, se excluye a la poblacion rural y los resultados quedan sesgados.</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="variables-estadisticas" class="level2">
+<h2 class="anchored" data-anchor-id="variables-estadisticas">3. Variables Estadisticas</h2>
+<section id="que-es-una-variable" class="level3">
+<h3 class="anchored" data-anchor-id="que-es-una-variable">¿Que es una variable?</h3>
+<p>En estadistica, una variable es cualquier caracteristica que puede tomar distintos valores entre los individuos que estamos estudiando. Por ejemplo, la edad de los funcionarios de una alcaldia es una variable porque cada funcionario tiene una edad diferente.</p>
+</section>
+<section id="clasificacion-segun-su-naturaleza" class="level3">
+<h3 class="anchored" data-anchor-id="clasificacion-segun-su-naturaleza">Clasificacion segun su naturaleza</h3>
+<p><strong>Variables Cualitativas:</strong> expresan categorias o atributos, no numeros.</p>
+<ul>
+<li><strong>Nominales:</strong> no tienen orden. Ej: tipo de contrato (termino fijo, indefinido, prestacion de servicios)</li>
+<li><strong>Ordinales:</strong> si tienen orden. Ej: nivel de satisfaccion (bajo, medio, alto)</li>
+</ul>
+<p><strong>Variables Cuantitativas:</strong> se expresan con numeros.</p>
+<ul>
+<li><strong>Discretas:</strong> solo toman valores enteros, se pueden contar. Ej: numero de empleados</li>
+<li><strong>Continuas:</strong> pueden tomar cualquier valor dentro de un rango. Ej: salario, temperatura</li>
+</ul>
+</section>
+<section id="escalas-de-medicion" class="level3">
+<h3 class="anchored" data-anchor-id="escalas-de-medicion">Escalas de Medicion</h3>
+<ul>
+<li><strong>Nominal:</strong> solo clasifica, no hay orden. Ej: genero, tipo de entidad</li>
+<li><strong>Ordinal:</strong> clasifica y ordena pero las distancias no son iguales. Ej: estrato, nivel educativo</li>
+<li><strong>Intervalo:</strong> tiene orden y distancias iguales pero no tiene cero absoluto. Ej: temperatura en grados Celsius</li>
+<li><strong>Razon:</strong> tiene todo lo anterior mas un cero absoluto real. Ej: ingresos, numero de contratos</li>
+</ul>
+</section>
+<section id="tabla-de-variables" class="level3">
+<h3 class="anchored" data-anchor-id="tabla-de-variables">Tabla de Variables</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 6%">
+<col style="width: 13%">
+<col style="width: 22%">
+<col style="width: 27%">
+<col style="width: 17%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Tipo</th>
+<th>Naturaleza</th>
+<th>Escala de medicion</th>
+<th>Ejemplo en adm. publica</th>
+<th>Justificacion</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Genero del servidor publico</td>
+<td>Cualitativa</td>
+<td>Nominal</td>
+<td>Nominal</td>
+<td>Masculino / Femenino en el SIGEP</td>
+<td>No hay orden entre las categorias, solo se puede clasificar</td>
+</tr>
+<tr class="even">
+<td>Nivel de satisfaccion ciudadana</td>
+<td>Cualitativa</td>
+<td>Ordinal</td>
+<td>Ordinal</td>
+<td>Encuesta de servicios: muy insatisfecho, insatisfecho, satisfecho, muy satisfecho</td>
+<td>Tiene orden pero la distancia entre niveles no es igual</td>
+</tr>
+<tr class="odd">
+<td>Numero de contratos ejecutados</td>
+<td>Cuantitativa</td>
+<td>Discreta</td>
+<td>Razon</td>
+<td>Contratos firmados por una alcaldia en un trimestre</td>
+<td>Son valores enteros contables y tiene cero absoluto</td>
+</tr>
+<tr class="even">
+<td>Presupuesto asignado (pesos)</td>
+<td>Cuantitativa</td>
+<td>Continua</td>
+<td>Razon</td>
+<td>Presupuesto municipal de Duitama 2026</td>
+<td>Puede tomar cualquier valor y tiene cero absoluto real</td>
+</tr>
+<tr class="odd">
+<td>Temperatura en obras publicas</td>
+<td>Cuantitativa</td>
+<td>Continua</td>
+<td>Intervalo</td>
+<td>Temperatura en proyectos viales de Boyaca</td>
+<td>No tiene cero absoluto real (0°C no es ausencia de temperatura)</td>
+</tr>
+<tr class="even">
+<td>Estrato socioeconomico</td>
+<td>Cualitativa</td>
+<td>Ordinal</td>
+<td>Ordinal</td>
+<td>Estratos 1 al 6 en el Sisben para subsidios</td>
+<td>Tienen orden pero la diferencia entre estratos no es uniforme</td>
+</tr>
+<tr class="odd">
+<td>Tasa de cobertura educativa (%)</td>
+<td>Cuantitativa</td>
+<td>Continua</td>
+<td>Razon</td>
+<td>Porcentaje de ninos matriculados segun el MEN</td>
+<td>Valor continuo con cero absoluto</td>
+</tr>
+<tr class="even">
+<td>Tipo de entidad publica</td>
+<td>Cualitativa</td>
+<td>Nominal</td>
+<td>Nominal</td>
+<td>Alcaldia, Gobernacion, Ministerio, Empresa publica</td>
+<td>Solo se clasifica, no hay orden posible entre tipos</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+<section id="aplicaciones-en-la-administracion-publica" class="level2">
+<h2 class="anchored" data-anchor-id="aplicaciones-en-la-administracion-publica">4. Aplicaciones en la Administracion Publica</h2>
+<p>La estadistica es muy importante para el Estado porque le permite tomar mejores decisiones basadas en datos reales.</p>
+<section id="indicadores-de-gestion" class="level3">
+<h3 class="anchored" data-anchor-id="indicadores-de-gestion">Indicadores de Gestion</h3>
+<p>El gobierno usa indicadores estadisticos para medir si las entidades publicas estan cumpliendo sus metas. Por ejemplo el MIPG mide el desempeño de todas las entidades del Estado con base en datos estadisticos.</p>
+</section>
+<section id="evaluacion-de-politicas-publicas" class="level3">
+<h3 class="anchored" data-anchor-id="evaluacion-de-politicas-publicas">Evaluacion de Politicas Publicas</h3>
+<p>El DNP usa modelos estadisticos para evaluar si los programas del gobierno estan funcionando. Se puede comparar antes y despues de implementar un programa para ver si hubo mejoras reales.</p>
+</section>
+<section id="analisis-de-pobreza" class="level3">
+<h3 class="anchored" data-anchor-id="analisis-de-pobreza">Analisis de Pobreza</h3>
+<p>El DANE calcula el Indice de Pobreza Multidimensional (IPM) combinando 15 variables estadisticas relacionadas con educacion, trabajo, salud y vivienda.</p>
+</section>
+<section id="cobertura-en-salud" class="level3">
+<h3 class="anchored" data-anchor-id="cobertura-en-salud">Cobertura en Salud</h3>
+<p>El Ministerio de Salud monitorea cuantas personas estan afiliadas al sistema de salud y cuantos ninos se mueren por cada 1000 nacimientos. Con esos datos decide donde invertir mas recursos.</p>
+</section>
+<section id="educacion" class="level3">
+<h3 class="anchored" data-anchor-id="educacion">Educacion</h3>
+<p>El Ministerio de Educacion Nacional usa tasas de cobertura escolar para distribuir el dinero del Sistema General de Participaciones entre los municipios que mas lo necesitan.</p>
+<hr>
+</section>
+</section>
+<section id="videos-complementarios" class="level2">
+<h2 class="anchored" data-anchor-id="videos-complementarios">5. Videos Complementarios</h2>
+<p>A continuacion estan los enlaces a los videos de las clases y material de apoyo del curso:</p>
+<ul>
+<li><p><a href="https://teams.microsoft.com/l/meetingrecap?driveId=b%21D7YzzlbmeEWLjwNK0auT2CH3uFd1xIVApOp7VErPTrDKHjRU8a_SRKgonSTj8TAq&amp;driveItemId=01TJV53VDQU4OPMC3I4JBYQC2NMBVTGRJR&amp;sitePath=https%3A%2F%2Fesapedu.sharepoint.com%2Fsites%2F2026-1_ESTADISTICAI_3B_IBAGUE_DAGOBERTOSALGADOHORTA%2FDocumentos+compartidos%2FGeneral%2FRecordings%2FSESI%C3%93N_3_ESTAD%C3%8DSTICA_1-20260425_193843-Grabaci%C3%B3n+de+la+reuni%C3%B3n.mp4%3Fweb%3D1&amp;fileUrl=https%3A%2F%2Fesapedu.sharepoint.com%2Fsites%2F2026-1_ESTADISTICAI_3B_IBAGUE_DAGOBERTOSALGADOHORTA%2FDocumentos+compartidos%2FGeneral%2FRecordings%2FSESI%C3%93N_3_ESTAD%C3%8DSTICA_1-20260425_193843-Grabaci%C3%B3n+de+la+reuni%C3%B3n.mp4%3Fweb%3D1&amp;iCalUid=040000008200e00074c5b7101a82e00800000000dbb71e1212d5dc01000000000000000010000000f0b71a480e6bfd4a9c877439bf00cfad&amp;threadId=19%3A045SfnXGMiwhQANtjmK6KIYxQJ41IkDfRRZpSfFRSvQ1%40thread.tacv2&amp;organizerId=486fd343-ddf5-4236-a980-b129c965f186&amp;tenantId=b24f0388-e61b-43e0-b9e7-baa5b0d5121e&amp;callId=d8c87ec8-0789-4afc-9504-7d76aebd9fe6&amp;threadType=space&amp;meetingType=Scheduled&amp;organizerGroupId=c12d9339-4e07-407b-80c3-861d6de8101e&amp;channelType=Standard&amp;replyChainId=1777162650028&amp;subType=RecapSharingLink_RecapCore">Sesion 3 - Estadistica I (25 de abril de 2026) - Microsoft Teams</a></p></li>
+<li><p><a href="https://teams.microsoft.com/l/meetingrecap?driveId=b%21D7YzzlbmeEWLjwNK0auT2CH3uFd1xIVApOp7VErPTrDKHjRU8a_SRKgonSTj8TAq&amp;driveItemId=01TJV53VAI443FKVF6DVGILZIOBYWCM3RC&amp;sitePath=https%3A%2F%2Fesapedu.sharepoint.com%2Fsites%2F2026-1_ESTADISTICAI_3B_IBAGUE_DAGOBERTOSALGADOHORTA%2FDocumentos+compartidos%2FGeneral%2FRecordings%2FSESI%C3%93N_4_ESTAD%C3%8DSTICA_1-20260426_081142-Grabaci%C3%B3n+de+la+reuni%C3%B3n.mp4%3Fweb%3D1&amp;fileUrl=https%3A%2F%2Fesapedu.sharepoint.com%2Fsites%2F2026-1_ESTADISTICAI_3B_IBAGUE_DAGOBERTOSALGADOHORTA%2FDocumentos+compartidos%2FGeneral%2FRecordings%2FSESI%C3%93N_4_ESTAD%C3%8DSTICA_1-20260426_081142-Grabaci%C3%B3n+de+la+reuni%C3%B3n.mp4%3Fweb%3D1&amp;iCalUid=040000008200e00074c5b7101a82e00800000000a68d34197ed5dc010000000000000000100000006fe211a647b36a4ea9dee485003654bd&amp;threadId=19%3A045SfnXGMiwhQANtjmK6KIYxQJ41IkDfRRZpSfFRSvQ1%40thread.tacv2&amp;organizerId=486fd343-ddf5-4236-a980-b129c965f186&amp;tenantId=b24f0388-e61b-43e0-b9e7-baa5b0d5121e&amp;callId=c1fe7691-ae5e-4dc3-8726-0f14a5d169e9&amp;threadType=space&amp;meetingType=Scheduled&amp;organizerGroupId=c12d9339-4e07-407b-80c3-861d6de8101e&amp;channelType=Standard&amp;replyChainId=1777209047441&amp;subType=RecapSharingLink_RecapCore">Sesion 4 - Estadistica I (26 de abril de 2026) - Microsoft Teams</a></p></li>
+<li><p><a href="https://www.youtube.com/watch?v=76CtlssWnTA&amp;t=1589s">Video YouTube - Estadistica I (desde el minuto 26:29)</a></p></li>
+<li><p><a href="https://www.youtube.com/@dagobertosalgadohorta9981">Canal del profesor en YouTube</a></p></li>
+</ul>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
